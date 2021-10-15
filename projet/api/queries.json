@@ -1,0 +1,15 @@
+{
+	"numberPictures" 	: "SELECT count(*) from PICTURE",
+	"numberMen" 		: "SELECT count(*) from PICTURE where gender = 0;",
+	"numberWomen" 		: "SELECT count(*) from PICTURE where gender = 1;",
+	"white"				: "SELECT count(*) from PICTURE where race = 0;",
+	"black"				: "SELECT count(*) from PICTURE where race = 1;",
+	"asian" 			: "SELECT count(*) from PICTURE where race = 2;",
+	"indian" 			: "SELECT count(*) from PICTURE where race = 3;",
+	"other" 			: "SELECT count(*) from PICTURE where race = 4;",
+	"0-19"	 			: "SELECT count(*) from PICTURE where age < 20;",				
+	"20-39"	 			: "SELECT count(*) from PICTURE where age >= 20 and age < 40;",				
+	"40-59"	 			: "SELECT count(*) from PICTURE where age >= 40 and age < 60;",				
+	"60-79"	 			: "SELECT count(*) from PICTURE where age >= 60 and age < 79;",				
+	"80-116" 			: "SELECT count(*) from PICTURE where age >= 80;"				
+}

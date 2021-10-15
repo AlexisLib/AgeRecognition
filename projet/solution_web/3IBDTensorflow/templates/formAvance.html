@@ -1,0 +1,50 @@
+<!--Partie formulaire-->
+<div class="row">
+    <div class="col s8 offset-s2">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img id="picture" src="{{ url_for('static', filename=cardImage) }}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p><br>Sélectionnez la photo d'une personne dont vous souhaitez connaitre son âge : <br><br></p>
+
+                    <form id="pictureFormAvance" method="post" enctype="multipart/form-data">
+                        <label for="fic" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
+                        <input name="fic" type="file" id="fic" />
+                        <p><br></p>
+                            <select id="selectModel", name="selectModel">
+                                <optgroup label="Régression Linéaire">
+                                    {% for value in selectValues["RL"] %}
+                                        <option value="{{ value['nom'] }}">{{ value["nom"] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                                <optgroup label="Perceptron multicouche">
+                                    {% for value in selectValues["PMC"] %}
+                                        <option>{{ value["nom"] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                                <optgroup label="Réseaux à fonctions de base radiales (RBF)">
+                                    {% for value in selectValues["RBF"] %}
+                                        <option>{{ value["nom"] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                                <optgroup label="Machine à vecteurs de support (SVM)">
+                                    {% for value in selectValues["SVM"] %}
+                                        <option>{{ value["nom"] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select>
+
+                        <input style="display: none;" id="sendFormAvance" type="submit" name="submit" value="Uploader" />
+
+                    </form>
+                </div>
+                <div class="card-action">
+                    <a href="javascript:simulateSendFormAvance()" class="right blue-text">Déterminer l'âge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

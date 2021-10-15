@@ -1,0 +1,67 @@
+{% if (data["modelsHead"] is defined) and data["modelsHead"]  %}
+ <!--Partie resultat-->
+ <div class="row">
+    <div class="col s8 offset-s2">
+        <div class="card blue lighten-1">
+            <div class="card-content white-text">
+                <span class="card-title "><b><u>Résultats photo découpée</u></b></span>
+                <table class="centered">
+                    <thread>
+                        <tr>
+                            <th class="center">Algorithme</th>
+                            <th class="center">Notre implémentation</th>
+                            <th class="center">Framework tensorflow</th>
+                        </tr>
+                    </thread>
+                    <tbody id="tbodyResults">
+
+                    {% for model in data["modelsHead"] %}
+                        <tr>
+                            <td>{{ model["nom"] }}</td>
+                            <td>{{ model["implement"] }}</td>
+                            <td>{{ model["framework"] }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+  <!--Partie resultat-->
+
+ <div class="row">
+    <div class="col s8 offset-s2">
+        <div class="card blue lighten-1">
+            <div class="card-content white-text">
+                <span class="card-title "><b><u>Résultats photo entière</u></b></span>
+                <table class="centered">
+                    <thread>
+                        <tr>
+                            <th class="center">Algorithme</th>
+                            <th class="center">Notre implémentation</th>
+                            <th class="center">Framework tensorflow</th>
+                        </tr>
+                    </thread>
+                    <tbody id="tbodyResultsbis">
+
+                    {% for model in data["models"] %}
+                        <tr>
+                            <td>{{ model["nom"] }}</td>
+                            <td>{{ model["implement"] }}</td>
+                            <td>{{ model["framework"] }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

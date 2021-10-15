@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Quel est ton age ?</title>
+        <link href="{{ url_for('static', filename='materialize/css/materialize.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='css/css.css') }}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="blue lighten-5">
+
+        {% include 'navbar.html' %}
+
+        <header>
+            <div class="row">
+                <div class="col s8 offset-s2">
+                     <h2 class="center-align teal-text">Reconnaissance d'âge d'une personne</h2>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            {% include 'cardPresentation.html' %}
+
+            {% include 'form.html' %}
+
+            {% if data is not none %}
+                {% include 'results.html' %}
+            {% endif %}
+        </main>
+
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
+
+
+        <script src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"> </script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"> </script>
+    </body>
+</html>

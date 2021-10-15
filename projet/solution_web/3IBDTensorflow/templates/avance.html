@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Quel est ton age ?</title>
+        <link href="{{ url_for('static', filename='materialize/css/materialize.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='css/css.css') }}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="blue lighten-5">
+
+        {% include 'navbar.html' %}
+
+
+        <main>
+            {% include 'formAvance.html' %}
+
+            {% if data is not none %}
+                {% include 'resultsAvance.html' %}
+            {% endif %}
+        </main>
+
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
+
+
+        <script type="text/javascript" src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"> </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"> </script>
+    </body>
+</html>
